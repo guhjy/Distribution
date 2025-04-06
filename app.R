@@ -166,7 +166,13 @@ ui <- fluidPage(
 
 # --- Server 邏輯 ---
 server <- function(input, output, session) {
-
+  
+# --- 載入與設定中文字型 ---
+library(showtext)
+showtext_auto()
+font_add("kai", "DFKai-SB")
+theme_set(theme_minimal(base_family = "kai"))
+  
   # --- 獲取當前參數 ---
   get_params <- reactive({
     params <- list()
