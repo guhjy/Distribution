@@ -167,10 +167,12 @@ ui <- fluidPage(
 # --- Server 邏輯 ---
 server <- function(input, output, session) {
   
-# --- 載入與設定中文字型 ---
 library(showtext)
+# 啟用 showtext，讓 ggplot2 圖形支援中文
 showtext_auto()
-font_add("kai", "DFKai-SB")
+# macOS 上的標楷體是 BiauKai
+font_add("kai", family = "BiauKai")
+# 套用到 ggplot2 全域字型
 theme_set(theme_minimal(base_family = "kai"))
   
   # --- 獲取當前參數 ---
