@@ -470,7 +470,7 @@ server <- function(input, output, session) {
       df_plot <- data.frame(x = x_vals, y = y_vals) %>% filter(!is.na(y) & is.finite(y)) # 過濾無效值
       if (nrow(df_plot) > 0) {
          p <- ggplot(df_plot, aes(x = x, y = y)) +
-             geom_line(color = "blue", size = 1) +
+             geom_line(color = "blue", linewidth = 1) +
              labs(title = plot_title, x = "數值", y = "機率密度") +
              theme_minimal()
 
@@ -536,10 +536,10 @@ server <- function(input, output, session) {
 
        # 添加垂直線標示統計量 (對於離散，標示在對應的 x 值上)
        # 注意：離散分佈的百分位數可能落在兩個值之間，這裡標示函數返回的值
-        if (!is.na(raw_stats_for_plot$Mean) && is.numeric(raw_stats_for_plot$Mean)) p <- p + geom_vline(xintercept = as.character(round(raw_stats_for_plot$Mean)), linetype = "dashed", color = "red", size=1)
-        if (!is.na(raw_stats_for_plot$Median) && is.numeric(raw_stats_for_plot$Median)) p <- p + geom_vline(xintercept = as.character(raw_stats_for_plot$Median), linetype = "dotted", color = "green4", size=1)
-        if (!is.na(raw_stats_for_plot$Pct_2.5) && is.numeric(raw_stats_for_plot$Pct_2.5)) p <- p + geom_vline(xintercept = as.character(raw_stats_for_plot$Pct_2.5), linetype = "solid", color = "orange", size=1)
-        if (!is.na(raw_stats_for_plot$Pct_97.5) && is.numeric(raw_stats_for_plot$Pct_97.5)) p <- p + geom_vline(xintercept = as.character(raw_stats_for_plot$Pct_97.5), linetype = "solid", color = "orange", size=1)
+        if (!is.na(raw_stats_for_plot$Mean) && is.numeric(raw_stats_for_plot$Mean)) p <- p + geom_vline(xintercept = as.character(round(raw_stats_for_plot$Mean)), linetype = "dashed", color = "red", linewidth=1)
+        if (!is.na(raw_stats_for_plot$Median) && is.numeric(raw_stats_for_plot$Median)) p <- p + geom_vline(xintercept = as.character(raw_stats_for_plot$Median), linetype = "dotted", color = "green4", linewidth=1)
+        if (!is.na(raw_stats_for_plot$Pct_2.5) && is.numeric(raw_stats_for_plot$Pct_2.5)) p <- p + geom_vline(xintercept = as.character(raw_stats_for_plot$Pct_2.5), linetype = "solid", color = "orange", linewidth=1)
+        if (!is.na(raw_stats_for_plot$Pct_97.5) && is.numeric(raw_stats_for_plot$Pct_97.5)) p <- p + geom_vline(xintercept = as.character(raw_stats_for_plot$Pct_97.5), linetype = "solid", color = "orange", linewidth=1)
 
         # 添加圖例 (邏輯同連續分佈)
          line_labels <- c()
