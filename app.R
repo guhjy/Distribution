@@ -820,7 +820,6 @@ server <- function(input, output, session) {
 
         p_clt <- ggplot(sample_means_df, aes(x = mean)) +
   geom_histogram(aes(y = after_stat(density)), bins = 30, fill = "lightblue", color = "black", alpha = 0.7) +
-  ...
           labs(title = plot_title,
                subtitle = plot_subtitle,
                x = "樣本平均數",
