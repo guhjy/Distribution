@@ -1,4 +1,4 @@
-# --- 必要的套件 ---
+# --- 必要的套件
 library(shiny)
 library(ggplot2) # 用於繪圖
 library(dplyr)   # 用於資料處理 (方便起見)
