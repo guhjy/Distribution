@@ -193,7 +193,7 @@ ui <- fluidPage(
             numericInput("clt_beta_shape2", "形狀2 (β):", value = 5, min = 0.001) # Referenced parameter names
           ),
           hr(),
-          sliderInput("clt_n", "每個樣本的大小 (n):", min = 2, max = 200, value = 30, step = 1),
+          sliderInput("clt_n", "每個樣本的大小 (n):", min = 2, max = 1000, value = 30, step = 10),
           sliderInput("clt_reps", "樣本數量 (模擬次數):", min = 100, max = 5000, value = 1000, step = 100),
           actionButton("clt_run", "執行模擬") # **** Make sure to click this button ****
         ),
