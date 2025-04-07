@@ -164,7 +164,7 @@ ui <- fluidPage(
       sidebarLayout(
         sidebarPanel(
           h4("中央極限定理 (CLT) 模擬"),
-          p("CLT 指出，從任何具有有限平均數和變異數的總體中抽取足夠大的隨機樣本，樣本平均數的分佈將近似於常態分佈。CLT 不適用於科西分布，因為它沒有平均值和變異數。"),
+          p("CLT 指出，從任何具有有限平均數和變異數的獨立同分佈數據中抽取足夠大的隨機樣本，樣本平均數的分佈將近似於常態分佈。CLT 不適用於科西分布，因為它沒有平均值和變異數。"),
           selectInput("clt_dist", "選擇模擬的原始分佈:",
                       choices = c("Uniform", # New dropdown for CLT
                                   "Lognormal",
